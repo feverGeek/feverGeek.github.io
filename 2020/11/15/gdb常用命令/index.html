@@ -6,13 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives: 2020 | Hexo</title>
+  <title>gdb常用命令 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/2020/index.html">
+  <meta name="description" content="指令 说明 示例    break 下断点，缩写为b break + 行数 break main  b 10   run 运行程序    info registers 查看所有寄存器值    info register eip 查看eip的值    info breakpoint [n] 查看当前调试环境中存在的所有断点，参数 n 作为可选参数，为某个断点的编号，表示查看指定断点而非全部断点">
+<meta property="og:type" content="article">
+<meta property="og:title" content="gdb常用命令">
+<meta property="og:url" content="http://example.com/2020/11/15/gdb%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="指令 说明 示例    break 下断点，缩写为b break + 行数 break main  b 10   run 运行程序    info registers 查看所有寄存器值    info register eip 查看eip的值    info breakpoint [n] 查看当前调试环境中存在的所有断点，参数 n 作为可选参数，为某个断点的编号，表示查看指定断点而非全部断点">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-11-15T04:54:22.387Z">
+<meta property="article:modified_time" content="2020-11-15T05:58:28.587Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -138,76 +142,254 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-gdb常用命令" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      gdb常用命令
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/11/15/gdb%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="archive-article-date">
+
+        
+        <a href="/2020/11/15/gdb%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="archive-article-date">
   	<time datetime="2020-11-15T04:54:22.387Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-15</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/11/15/gdb%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">gdb常用命令</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <table>
+<thead>
+<tr>
+<th align="center">指令</th>
+<th align="left">说明</th>
+<th align="left">示例</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">break</td>
+<td align="left">下断点，缩写为b</td>
+<td align="left">break + 行数<br/> break main <br/> b 10</td>
+</tr>
+<tr>
+<td align="center">run</td>
+<td align="left">运行程序</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center">info registers</td>
+<td align="left">查看所有寄存器值</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center">info register eip</td>
+<td align="left">查看eip的值</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center">info breakpoint [n]</td>
+<td align="left">查看当前调试环境中存在的所有断点，参数 n 作为可选参数，为某个断点的编号，表示查看指定断点而非全部断点。<br/>缩写为info break [n]</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center">i r eip</td>
+<td align="left">等同于 info register eip</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center">quit</td>
+<td align="left">退出gdb</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center">set disassembly intel</td>
+<td align="left">设置汇编为intel语法风格 也可以缩写为 set dis intel</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center">list</td>
+<td align="left">打印所调试程序的源代码，需要有符号表，缩写为l</td>
+<td align="left">list +行数<br/>list +func_name<br/>list main<br/>l main</td>
+</tr>
+<tr>
+<td align="center">disassemble</td>
+<td align="left">反汇编一个函数<br/>反汇编一段内存地址, 第1个参数是起始地址，第2个是终止地址<br/>缩写为disass</td>
+<td align="left">disassemble +func_name<br/>disassemble 0×0 0×10</td>
+</tr>
+<tr>
+<td align="center">x</td>
+<td align="left">查看内存值<br/>常见的格式字母<br/>o  以八进制显示<br/>x  以十六进制显示<br/>u  以标准的十进制无符号数字显示<br/>t  以二进制显示<br/>单元大小表示字母<br/>b  单个字节<br/>h  半字，大小为2字节<br/>w  字，大小为4字节<br/>g  巨型，大小为8字节<br/>特殊字母<br/>c  以字符的方式查看<br/>s  以字符串的方式查看</td>
+<td align="left">x/o +地址 以八进制查看某个地址处的值<br/>x/x $eip 以十六进制查看eip指向地址的值<br/>x/4xb $ebp - 4 <br/>x/i $eip 查看eip指向的指令<br/>x/6cb 0x8048484 查看0x8048484处的6个字符<br/>x/s 0x8048484 查看0x8048484处的字符串</td>
+</tr>
+<tr>
+<td align="center">print</td>
+<td align="left">查看变量值或表达式结果，缩写为p</td>
+<td align="left">print variable_name</td>
+</tr>
+<tr>
+<td align="center">next</td>
+<td align="left">单步步过，指的是c源码，缩写为n</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center">step</td>
+<td align="left">单步步入，指的是c源码，缩写为s</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center">nexti</td>
+<td align="left">单步步过，指的是汇编代码，缩写为ni</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center">stepi</td>
+<td align="left">单步步入，指的是汇编代码，缩写为si</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center">continue</td>
+<td align="left">当程序遇到断点停止运行后可以使用continue命令恢复程序的运行到下一个断点或直到程序结束</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center">finish</td>
+<td align="left">执行完当前的函数，缩写为fin</td>
+<td align="left"></td>
+</tr>
+</tbody></table>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/11/15/gdb%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/11/14/hello-world/" class="archive-article-date">
-  	<time datetime="2020-11-14T15:38:56.594Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-14</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/11/14/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">hexo 命令</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/11/14/hello-world/">hexo 命令</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -230,8 +412,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
