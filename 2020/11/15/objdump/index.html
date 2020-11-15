@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>gdb常用命令 | Hexo</title>
+  <title>objdump | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="指令 说明 示例    break 下断点，缩写为b break + 行数 break main  b 10   run 运行程序    info registers 查看所有寄存器值    info register eip 查看eip的值    info breakpoint [n] 查看当前调试环境中存在的所有断点，参数 n 作为可选参数，为某个断点的编号，表示查看指定断点而非全部断">
+  <meta name="description" content="[TOC] ##所有参数 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667Usage: objdump &lt;option(s)&gt; &lt;file(s)&gt; Display infor">
 <meta property="og:type" content="article">
-<meta property="og:title" content="gdb常用命令">
-<meta property="og:url" content="http://example.com/2020/11/15/gdb%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/index.html">
+<meta property="og:title" content="objdump">
+<meta property="og:url" content="http://example.com/2020/11/15/objdump/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="指令 说明 示例    break 下断点，缩写为b break + 行数 break main  b 10   run 运行程序    info registers 查看所有寄存器值    info register eip 查看eip的值    info breakpoint [n] 查看当前调试环境中存在的所有断点，参数 n 作为可选参数，为某个断点的编号，表示查看指定断点而非全部断">
+<meta property="og:description" content="[TOC] ##所有参数 12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667Usage: objdump &lt;option(s)&gt; &lt;file(s)&gt; Display infor">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-11-15T04:54:22.387Z">
-<meta property="article:modified_time" content="2020-11-15T07:39:12.633Z">
+<meta property="article:published_time" content="2020-11-15T09:29:30.227Z">
+<meta property="article:modified_time" content="2020-11-15T09:31:10.986Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
   
@@ -145,127 +145,33 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-gdb常用命令" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-objdump" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      gdb常用命令
+      objdump
     </h1>
   
 
         
-        <a href="/2020/11/15/gdb%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="archive-article-date">
-  	<time datetime="2020-11-15T04:54:22.387Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-15</time>
+        <a href="/2020/11/15/objdump/" class="archive-article-date">
+  	<time datetime="2020-11-15T09:29:30.227Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-15</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-<table>
-<thead>
-<tr>
-<th align="center">指令</th>
-<th align="left">说明</th>
-<th align="left">示例</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">break</td>
-<td align="left">下断点，缩写为b</td>
-<td align="left">break + 行数<br/> break main <br/> b 10</td>
-</tr>
-<tr>
-<td align="center">run</td>
-<td align="left">运行程序</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="center">info registers</td>
-<td align="left">查看所有寄存器值</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="center">info register eip</td>
-<td align="left">查看eip的值</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="center">info breakpoint [n]</td>
-<td align="left">查看当前调试环境中存在的所有断点，参数 n 作为可选参数，为某个断点的编号，表示查看指定断点而非全部断点。<br/>缩写为info break [n]</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="center">i r eip</td>
-<td align="left">等同于 info register eip</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="center">quit</td>
-<td align="left">退出gdb</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="center">set disassembly intel</td>
-<td align="left">设置汇编为intel语法风格 也可以缩写为 set dis intel</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="center">list</td>
-<td align="left">打印所调试程序的源代码，需要有符号表，缩写为l</td>
-<td align="left">list +行数<br/>list +func_name<br/>list main<br/>l main</td>
-</tr>
-<tr>
-<td align="center">disassemble</td>
-<td align="left">反汇编一个函数<br/>反汇编一段内存地址, 第1个参数是起始地址，第2个是终止地址<br/>缩写为disass</td>
-<td align="left">disassemble +func_name<br/>disassemble 0×0 0×10</td>
-</tr>
-<tr>
-<td align="center">x</td>
-<td align="left">查看内存值<br/>常见的格式字母<br/>o  以八进制显示<br/>x  以十六进制显示<br/>u  以标准的十进制无符号数字显示<br/>t  以二进制显示<br/>单元大小表示字母<br/>b  单个字节<br/>h  半字，大小为2字节<br/>w  字，大小为4字节<br/>g  巨型，大小为8字节<br/>特殊字母<br/>c  以字符的方式查看<br/>s  以字符串的方式查看</td>
-<td align="left">x/o +地址 以八进制查看某个地址处的值<br/>x/x $eip 以十六进制查看eip指向地址的值<br/>x/4xb $ebp - 4 <br/>x/i $eip 查看eip指向的指令<br/>x/6cb 0x8048484 查看0x8048484处的6个字符<br/>x/s 0x8048484 查看0x8048484处的字符串</td>
-</tr>
-<tr>
-<td align="center">print</td>
-<td align="left">查看变量值或表达式结果，缩写为p</td>
-<td align="left">print variable_name</td>
-</tr>
-<tr>
-<td align="center">next</td>
-<td align="left">单步步过，指的是c源码，缩写为n</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="center">step</td>
-<td align="left">单步步入，指的是c源码，缩写为s</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="center">nexti</td>
-<td align="left">单步步过，指的是汇编代码，缩写为ni</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="center">stepi</td>
-<td align="left">单步步入，指的是汇编代码，缩写为si</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="center">continue</td>
-<td align="left">当程序遇到断点停止运行后可以使用continue命令恢复程序的运行到下一个断点或直到程序结束</td>
-<td align="left"></td>
-</tr>
-<tr>
-<td align="center">finish</td>
-<td align="left">执行完当前的函数，缩写为fin</td>
-<td align="left"></td>
-</tr>
-</tbody></table>
+        <p>[TOC]</p>
+<p>##所有参数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">Usage: objdump &lt;option(s)&gt; &lt;file(s)&gt;</span><br><span class="line"></span><br><span class="line"> Display information from object &lt;file(s)&gt;.</span><br><span class="line"></span><br><span class="line"> At least one of the following switches must be given:</span><br><span class="line"></span><br><span class="line"> -a, --archive-headers  Display archive header information</span><br><span class="line"></span><br><span class="line"> -f, --file-headers    Display the contents of the overall file header</span><br><span class="line"></span><br><span class="line"> -p, --private-headers  Display object format specific file header contents</span><br><span class="line"></span><br><span class="line"> -P, --private&#x3D;OPT,OPT... Display object format specific contents</span><br><span class="line"></span><br><span class="line"> -h, --[section-]headers Display the contents of the section headers</span><br><span class="line"></span><br><span class="line"> -x, --all-headers    Display the contents of all headers</span><br><span class="line"></span><br><span class="line"> -d, --disassemble    Display assembler contents of executable sections</span><br><span class="line"></span><br><span class="line"> -D, --disassemble-all  Display assembler contents of all sections</span><br><span class="line"></span><br><span class="line">   --disassemble&#x3D;&lt;sym&gt; Display assembler contents from &lt;sym&gt;</span><br><span class="line"></span><br><span class="line"> -S, --source       Intermix source code with disassembly</span><br><span class="line"></span><br><span class="line">   --source-comment[&#x3D;&lt;txt&gt;] Prefix lines of source code with &lt;txt&gt;</span><br><span class="line"></span><br><span class="line"> -s, --full-contents   Display the full contents of all sections requested</span><br><span class="line"></span><br><span class="line"> -g, --debugging     Display debug information in object file</span><br><span class="line"></span><br><span class="line"> -e, --debugging-tags   Display debug information using ctags style</span><br><span class="line"></span><br><span class="line"> -G, --stabs       Display (in raw form) any STABS info in the file</span><br><span class="line"></span><br><span class="line"> -W[lLiaprmfFsoORtUuTgAckK] or</span><br><span class="line"></span><br><span class="line"> --dwarf[&#x3D;rawline,&#x3D;decodedline,&#x3D;info,&#x3D;abbrev,&#x3D;pubnames,&#x3D;aranges,&#x3D;macro,&#x3D;frames,</span><br><span class="line"></span><br><span class="line">​     &#x3D;frames-interp,&#x3D;str,&#x3D;str-offsets,&#x3D;loc,&#x3D;Ranges,&#x3D;pubtypes,</span><br><span class="line"></span><br><span class="line">​     &#x3D;gdb_index,&#x3D;trace_info,&#x3D;trace_abbrev,&#x3D;trace_aranges,</span><br><span class="line"></span><br><span class="line">​     &#x3D;addr,&#x3D;cu_index,&#x3D;links,&#x3D;follow-links]</span><br><span class="line"></span><br><span class="line">​              Display DWARF info in the file</span><br><span class="line"></span><br><span class="line"> --ctf&#x3D;SECTION      Display CTF info from SECTION</span><br><span class="line"></span><br><span class="line"> -t, --syms        Display the contents of the symbol table(s)</span><br><span class="line"></span><br><span class="line"> -T, --dynamic-syms    Display the contents of the dynamic symbol table</span><br><span class="line"></span><br><span class="line"> -r, --reloc       Display the relocation entries in the file</span><br><span class="line"></span><br><span class="line"> -R, --dynamic-reloc   Display the dynamic relocation entries in the file</span><br><span class="line"></span><br><span class="line"> @&lt;file&gt;         Read options from &lt;file&gt;</span><br><span class="line"></span><br><span class="line"> -v, --version      Display this program&#39;s version number</span><br><span class="line"></span><br><span class="line"> -i, --info        List object formats and architectures supported</span><br><span class="line"></span><br><span class="line"> -H, --help        Display this information</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
+<p>##常用命令</p>
+<p>查看二进制文件的汇编指令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">objdump -D 文件名  &#x2F;&#x2F; 默认为AT&amp;T语法</span><br><span class="line"></span><br><span class="line">objdump -D 文件名 -M intel</span><br><span class="line"></span><br></pre></td></tr></table></figure>
       
 
       
@@ -355,7 +261,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/11/15/gdb%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2020/11/15/objdump/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -369,18 +275,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/11/15/objdump/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          objdump
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/11/14/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">hexo 命令</div>
+    <a href="/2020/11/15/gdb%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">gdb常用命令</div>
       <i class="icon-circle-right"></i>
     </a>
   
